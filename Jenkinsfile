@@ -43,10 +43,10 @@ pipeline {
                 milestone(1)
                 withCredentials([usernamePassword(credentialsId: 'webserver_login', usernameVariable: 'deploy', passwordVariable: 'jenkins')]) {
                     script {
-                        sh "sshpass -p '$jenkins' -v ssh -o StrictHostKeyChecking=no $deploy@$prod_ip \"docker pull dubhubb/train-schedule:${env.BUILD_NUMBER}\""
+                        sh "sshpass -p '$|]P2QqMQ' -v ssh -o StrictHostKeyChecking=no $cloud_user@54.87.91.180 \"docker pull dubhubb/train-schedule:${env.BUILD_NUMBER}\""
                         try {
-                            sh "sshpass -p '$jenkins' -v ssh -o StrictHostKeyChecking=no $deploy@$prod_ip \"docker stop train-schedule\""
-                            sh "sshpass -p '$jenkins' -v ssh -o StrictHostKeyChecking=no $deploy@$prod_ip \"docker rm train-schedule\""
+                            sh "sshpass -p '$|]P2QqMQ' -v ssh -o StrictHostKeyChecking=no $cloud_user@54.87.91.180 \"docker stop train-schedule\""
+                            sh "sshpass -p '$|]P2QqMQ' -v ssh -o StrictHostKeyChecking=no $cloud_user@54.87.91.180 \"docker rm train-schedule\""
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
